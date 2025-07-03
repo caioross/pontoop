@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,6 +12,7 @@ import { toast } from "@/hooks/use-toast";
 import { TimesheetTable } from "@/components/TimesheetTable";
 import { ExportButtons } from "@/components/ExportButtons";
 import { SpotifyPlayer } from "@/components/SpotifyPlayer";
+import { TimesheetChart } from "@/components/TimesheetChart";
 import { ptBR } from "date-fns/locale";
 
 export interface TimeEntry {
@@ -186,6 +186,10 @@ const Index = () => {
               onImportData={handleImportData}
             />
           </div>
+        </div>
+
+        <div className="mb-8">
+          <TimesheetChart timeEntries={timeEntries} />
         </div>
 
         <TimesheetTable 
